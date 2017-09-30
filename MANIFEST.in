@@ -1,0 +1,2 @@
+include versioneer.py
+include trapta_configurator/_version.py
