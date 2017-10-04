@@ -208,21 +208,28 @@
 		"com.android.bluetooth",
 		"com.android.mms",
 		"com.android.dialer",
+    "com.android.vending",
+    "com.android.stk",
+    "com.android.documentsui",
+    "com.android.deskclock",
 		
-		"com.example",
+    "com.example",
+    
+    "com.mtk.telephony",
 
 		"com.mediatek.camera",
-		"com.mediatek.filemanager",		
+    "com.mediatek.filemanager",	
+    "com.mediatek.videoplayer",	
 		
 		"com.google.android.youtube",		
 		"com.google.android.apps.maps",	
 		"com.google.android.googlequicksearchbox",
-		"com.mediatek.videoplayer",	
-		"com.google.android.apps.maps",	
-		"com.google.android.apps.maps",	
-		"com.google.android.apps.maps"
+		"com.mediatek.videoplayer"
   ],
-    "installed":[
+  "hidded":[
+    "com.android.settings"
+  ],
+  "installed":[
     "trapta.apk"
   ]
   }

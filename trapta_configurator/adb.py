@@ -59,5 +59,15 @@ class Adb(object):
     cmd = ["pm", "uninstall", "--user", "0", "-k", name]
     LOGGER.debug('remove_app %s', " ".join(cmd))
     retcode, out,err = self.shell(cmd)
+
+  def install_apk(self, name):
+    cmd = ["pm", "install", "./apk/"+name]
+    LOGGER.debug('install_apk %s', " ".join(cmd))
+    retcode, out,err = self.__call("install", cmd)
+
+  def hide_apk(self, name):
+    cmd = ["pm", "hide", name]
+    LOGGER.debug('hide_apk %s', " ".join(cmd))
+    retcode, out,err = self.__call("hide", cmd)
       
       

@@ -49,6 +49,14 @@ def main():
     for package_name in config['app']['removed']:
         adbcon.remove_app(package_name)
 
+    LOGGER.info('hide packages')
+    for package_name in config['app']['hidded']:
+        adbcon.hide_apk(package_name)
+
+    LOGGER.info('install packages')
+    for package_name in config['app']['installed']:
+        adbcon.install_apk(package_name)
+
     LOGGER.info('reboot device')
     adbcon.shell(['reboot'])
 
