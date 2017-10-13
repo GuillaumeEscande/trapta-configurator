@@ -6,65 +6,109 @@ trapta_configurator
 a python service to configure Trapta android device
 """
 
-
 import argparse
 import logging
 import os
 import subprocess
 import json
+import sys
+import json
 
-import adb
+import trapta_config
+from commands import export
+from commands import format
+from lib import base
 
-#from trapta_configurator import _version
-#__version__ = _version.get_versions()['version']
+import _version
+
+__version__ = _version.get_versions()['version']
+
 
 ADB_PATH="adb"
 
-logging.basicConfig()
 LOGGER = logging.getLogger(__name__)
-logging.root.setLevel(logging.INFO)
+logging.root.setLevel( logging.INFO )
 
-logging.root.setLevel(logging.DEBUG)
-LOGGER.setLevel(logging.DEBUG)
+root = logging.getLogger()
+root.setLevel(logging.DEBUG)
+root.addHandler(logging.StreamHandler(sys.stdout))
+
+def do_export(config, args, data_base):
+    """Export repo"""
+    export.export(config, args, data_base)
+
+def do_format(config, args, data_base):
+    """Format repo"""
+    format.format(config, args, data_base)
+    _ = data_base
+    _ = args
+    
+def do_version(config, args, data_base):
+    """Shows the version"""
+    print(__version__)
+    _ = args
+    _ = data_base
+    _ = config
+
+
+def __add_command(subparsers, command, func):
+    """Add the cnfig and verbose argument to given parser"""
+    parser = subparsers.add_parser(command, help=command)
+    if func is not None:
+        parser.set_defaults(func=func)
+    return parser
+
 
 def main():
-    adbcon = adb.Adb()
-    LOGGER.info('start adb server')
-    adbcon.start_server()
+    """The main
+    call trapta_configurator [--config CONFIG] update
+    call trapta_configurator [--config CONFIG] export
+    call trapta_configurator [--config CONFIG] import
+    call trapta_configurator version
+    """
 
-    LOGGER.info('list devices')
-    print(adbcon.devices())
+    app_path = os.path.abspath(__file__)
+    app_path = os.path.dirname(app_path)
+    app_path = os.path.dirname(app_path)
+    data_path = os.path.join(app_path, "data")
 
-    with open("./conf/settings.json", 'r') as fson_fp:
-        config = json.load(fson_fp)
+    config_path = os.path.join(data_path, "settings.json")
+    base_path = os.path.join(data_path, "base.json")
 
-    LOGGER.info('configure settings')
-    for setting_namespace in config['settings']:
-        namespace = setting_namespace['namespace']
-        for settings in setting_namespace['values']:
-            adbcon.set_settings(namespace, settings['name'], settings['value'])
+    parser = argparse.ArgumentParser()
+    parser.add_argument( '-c', '--config', default=config_path, help='The config file')
+    parser.add_argument( '-b', '--base',  default=base_path, help='The base file')
+    parser.add_argument( '-a', '--adb', default=None, help='The adb path')
+    parser.add_argument( '-v', '--verbose', action='store_true', default=False, help='Go into verbose')
 
+    subparser = parser.add_subparsers()
 
-    LOGGER.info('remove packages')
-    for package_name in config['app']['removed']:
-        adbcon.remove_app(package_name)
+    # Commands update
+    update_parser = __add_command(subparser, 'export', do_export)
 
-    LOGGER.info('hide packages')
-    for package_name in config['app']['hidded']:
-        adbcon.hide_apk(package_name)
+    # Commands export
+    export_parser = __add_command(subparser, 'format', do_format)
 
-    LOGGER.info('install packages')
-    for package_name in config['app']['installed']:
-        adbcon.install_apk(package_name)
+    # Commands version
+    version_parser = __add_command(subparser, 'version', do_version)
 
-    LOGGER.info('reboot device')
-    adbcon.shell(['reboot'])
+    # args traitement
+    args = parser.parse_args()
+    config_file = args.config
+    verbose = args.verbose
 
+    if verbose:
+        logging.root.setLevel(logging.DEBUG)
+        LOGGER.setLevel(logging.DEBUG)
+        LOGGER.info('%s with config %s', function.__name__, config_file)
 
-    LOGGER.info('kill adb server')
-    adbcon.kill_server()
+    config = trapta_config.TraptaConfig.load(config_file)
 
+    data_base = base.Base.load(args.base)
 
+    args.func(config, args, data_base)
+
+    data_base.dump(args.base)
 
 if __name__ == '__main__':
     main()
