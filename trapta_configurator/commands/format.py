@@ -51,6 +51,11 @@ def format(config, args, data_base):
             device['imei1'] = imei1
             data_base.add( device )
 
+
+    if not error : 
+        logger.info('restore ap')
+        adbcon.restore_img("backup.ap")
+
     if not error : 
         logger.info('Config of %s device', device['name'])
 
@@ -75,6 +80,9 @@ def format(config, args, data_base):
         for package_name in config.app['installed']:
             adbcon.install_apk(package_name)
 
+    if not error :
+        ## specific phone :
+        adbcon.set_settings("global", "device_name", device['name'])
 
     if not error : 
         logger.info('Reboot device')

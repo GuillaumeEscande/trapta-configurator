@@ -98,10 +98,6 @@
           "value":"1"
         },
         {
-          "name":"device_name",
-          "value":"TRAPTA_001"
-        },
-        {
           "name":"heads_up_notifications_enabled",
           "value":"1"
         },
@@ -231,8 +227,7 @@
     "com.android.settings"
   ],
   "installed":[
-    "trapta.apk",
-    "KingoRoot.apk"
+    "trapta.apk"
   ]
   },
   "files" : [

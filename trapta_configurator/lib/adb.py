@@ -72,8 +72,10 @@ class Adb(object):
     retcode, out,err = self.shell(cmd_joined)
       
   def remove_app(self, name=""):
-    LOGGER.debug('remove_app %s', name)
-    retcode, out,err = self.__call("uninstall", name)
+    cmd = ["pm", "uninstall", "--user", "0", "-k", name]
+    cmd_joined = " ".join(cmd)
+    LOGGER.debug('remove_apk %s', cmd_joined)
+    retcode, out,err = self.shell(cmd_joined)
 
   def install_apk(self, name=""):
     package = "./data/apk/"+name
@@ -85,5 +87,10 @@ class Adb(object):
     cmd_joined = " ".join(cmd)
     LOGGER.debug('hide_apk %s', cmd_joined)
     retcode, out,err = self.shell(cmd_joined)
+
+  def restore_img(self, name=""):
+    package = "./data/img/"+name
+    LOGGER.debug('restore %s', package)
+    retcode, out,err = self.__call("restore", package)
       
       
