@@ -2,63 +2,213 @@
   "devices": [
     {
       "imei1": "", 
+      "licence": "4977383422253546", 
       "mac": "b8:b9:4a:d4:99:f9", 
       "name": "TRAPTA-001", 
       "number": 1
     }, 
     {
       "imei1": "354721080346284", 
+      "licence": "2669251508039805", 
       "mac": "78:4b:4d:0c:da:46", 
       "name": "TRAPTA-002", 
       "number": 2
     }, 
     {
       "imei1": "354721080429379", 
+      "licence": "3618215249284490", 
       "mac": "cc:bc:5e:b5:c1:67", 
       "name": "TRAPTA-003", 
       "number": 3
     }, 
     {
       "imei1": "354721080427852", 
+      "licence": "6891257788706921", 
       "mac": "08:e3:47:8b:f9:3b", 
       "name": "TRAPTA-004", 
       "number": 4
     }, 
     {
       "imei1": "354721080345625", 
+      "licence": "3451062760190313", 
       "mac": "6c:91:34:dc:cd:63", 
       "name": "TRAPTA-005", 
       "number": 5
     }, 
     {
       "imei1": "354721080421590", 
+      "licence": "6353725421498925", 
       "mac": "20:5b:15:cb:60:e0", 
       "name": "TRAPTA-006", 
       "number": 6
     }, 
     {
       "imei1": "354721080346920", 
+      "licence": "2225072723101652", 
       "mac": "5c:aa:bc:8e:6d:e4", 
       "name": "TRAPTA-007", 
       "number": 7
     }, 
     {
       "imei1": "354721080429130", 
+      "licence": "7675993005010944", 
       "mac": "dc:e4:ad:4d:bd:78", 
       "name": "TRAPTA-008", 
       "number": 8
     }, 
     {
       "imei1": "354721080345948", 
+      "licence": "2963308289882203", 
       "mac": "f0:78:1c:2d:7c:4a", 
       "name": "TRAPTA-009", 
       "number": 9
     }, 
     {
       "imei1": "354721080352688", 
+      "licence": "", 
       "mac": "4c:07:8b:4f:64:cc", 
       "name": "TRAPTA-010", 
       "number": 10
+    }, 
+    {
+      "imei1": "354721080353587", 
+      "licence": "", 
+      "mac": "bc:30:78:64:80:47", 
+      "name": "TRAPTA-011", 
+      "number": 11
+    }, 
+    {
+      "imei1": "354721080428116", 
+      "licence": "", 
+      "mac": "d0:e9:69:36:34:e1", 
+      "name": "TRAPTA-012", 
+      "number": 12
+    }, 
+    {
+      "imei1": "", 
+      "licence": "", 
+      "mac": "18:40:d9:a3:15:4c", 
+      "name": "TRAPTA-013", 
+      "number": 13
+    }, 
+    {
+      "imei1": "354721080340006", 
+      "licence": "", 
+      "mac": "14:c1:06:a4:65:78", 
+      "name": "TRAPTA-014", 
+      "number": 14
+    }, 
+    {
+      "imei1": "354721080346466", 
+      "licence": "", 
+      "mac": "a8:2b:70:03:61:26", 
+      "name": "TRAPTA-015", 
+      "number": 15
+    }, 
+    {
+      "imei1": "354721080429874", 
+      "licence": "", 
+      "mac": "9c:fc:4a:ce:da:59", 
+      "name": "TRAPTA-016", 
+      "number": 16
+    }, 
+    {
+      "imei1": "354721080348702", 
+      "licence": "", 
+      "mac": "6c:01:ee:1b:77:01", 
+      "name": "TRAPTA-017", 
+      "number": 17
+    }, 
+    {
+      "imei1": "354721080430138", 
+      "licence": "", 
+      "mac": "a0:82:46:7e:33:7f", 
+      "name": "TRAPTA-018", 
+      "number": 18
+    }, 
+    {
+      "imei1": "354721080427134", 
+      "licence": "", 
+      "mac": "b8:c4:97:f0:8f:7a", 
+      "name": "TRAPTA-019", 
+      "number": 19
+    }, 
+    {
+      "imei1": "", 
+      "licence": "", 
+      "mac": "d0:4e:c3:96:9f:45", 
+      "name": "TRAPTA-020", 
+      "number": 20
+    }, 
+    {
+      "imei1": "358888050245402", 
+      "licence": "", 
+      "mac": "60:17:24:fa:d5:e3", 
+      "name": "TRAPTA-021", 
+      "number": 21
+    }, 
+    {
+      "imei1": "358888050243407", 
+      "licence": "", 
+      "mac": "94:f1:83:5f:08:d4", 
+      "name": "TRAPTA-022", 
+      "number": 22
+    }, 
+    {
+      "imei1": "358888050244686", 
+      "licence": "", 
+      "mac": "48:62:63:b9:c9:8d", 
+      "name": "TRAPTA-023", 
+      "number": 23
+    }, 
+    {
+      "imei1": "358888050245527", 
+      "licence": "", 
+      "mac": "ac:b2:e3:47:00:26", 
+      "name": "TRAPTA-024", 
+      "number": 24
+    }, 
+    {
+      "imei1": "358888050245667", 
+      "licence": "", 
+      "mac": "44:79:3c:21:c8:7b", 
+      "name": "TRAPTA-025", 
+      "number": 25
+    }, 
+    {
+      "imei1": "358888050245188", 
+      "licence": "", 
+      "mac": "ac:b6:f2:85:05:e5", 
+      "name": "TRAPTA-026", 
+      "number": 26
+    }, 
+    {
+      "imei1": "358888050245147", 
+      "licence": "", 
+      "mac": "ec:52:77:00:16:07", 
+      "name": "TRAPTA-027", 
+      "number": 27
+    }, 
+    {
+      "imei1": "358888050244603", 
+      "licence": "", 
+      "mac": "e0:f8:10:12:82:55", 
+      "name": "TRAPTA-028", 
+      "number": 28
+    }, 
+    {
+      "imei1": "", 
+      "licence": "38:b3:51:ad:21:7e", 
+      "mac": "", 
+      "name": "Pierre", 
+      "number": 29
+    }, 
+    {
+      "imei1": "358888050245923", 
+      "licence": "", 
+      "mac": "b4:d5:ad:7f:f0:fa", 
+      "name": "Guillaume", 
+      "number": 30
     }
   ]
 }

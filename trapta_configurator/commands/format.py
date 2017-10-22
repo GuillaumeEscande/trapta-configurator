@@ -49,6 +49,7 @@ def format(config, args, data_base):
             device['name'] = "TRAPTA-%03d" % (device['number'])
             device['mac'] = mac_addr 
             device['imei1'] = imei1
+            device['licence'] = ""
             data_base.add( device )
 
 
