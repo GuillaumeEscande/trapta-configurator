@@ -15,3 +15,30 @@ Script de configuration des terminaux android pour trapta
     - commande trapta liste les licences trapta
 
 - changer l'arriere plan
+
+
+## Etape de configuration d'une flotte de téléphone :
+
+### Step 1 : Préparer 1 premier téléphone pilote :
+
+* Initialiser le téléphone avec :
+** Langue
+** Wifi maison
+** Compte android trapta : cd31geotel01@gmail.com
+https://docs.google.com/document/d/1isM47OSyFRWcdgRUgxEOXWkY4TZD9GQLtAsiziJG1HM/edit
+** Passer Hey google
+** Passer google pay
+** Desactiver les options de localisation et tout ça
+** Pas de code de vérification
+** Activer le mode developpeur
+** Activer le deboggage usb
+** Faire install
+** couper le son
+** activer wifi
+** activer economiseur de atteir
+** positionner icone trapta
+** DESACTIVER ACCES MICRO
+
+
+
+

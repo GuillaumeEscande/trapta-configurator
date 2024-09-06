@@ -9,7 +9,7 @@ from lib import adb
 
 logger = logging.getLogger(__name__)
 
-regex_mac_addr = re.compile(ur'((?:(\d{1,2}|[a-fA-F]{1,2}){2})(?::|-*)){6}')
+regex_mac_addr = re.compile(r'((?:(\d{1,2}|[a-fA-F]{1,2}){2})(?::|-*)){6}')
 
 def format(config, args, data_base):
     logger.info('Format of data %s', config.name)
@@ -28,7 +28,7 @@ def format(config, args, data_base):
     logger.info('Find MAC Address')
     retcode, stdout, err = adbcon.shell("ip addr show wlan0", ["| grep 'link/ether '| cut -d' ' -f6"])
 
-    if regex_mac_addr.match(stdout[:-1]) :
+    if regex_mac_addr.match(stdout[:-1].decode('utf-8')) :
         mac_addr = stdout[:-1]
     else :
         logger.error("Wifi no enabled")
@@ -47,15 +47,15 @@ def format(config, args, data_base):
             
             device['number'] = data_base.next_id()
             device['name'] = "TRAPTA-%03d" % (device['number'])
-            device['mac'] = mac_addr 
-            device['imei1'] = imei1
+            device['mac'] = mac_addr.decode('utf-8')
+            device['imei1'] = imei1.decode('utf-8')
             device['licence'] = ""
             data_base.add( device )
 
 
     if not error : 
         logger.info('restore ap')
-        adbcon.restore_img("backup.ap")
+        adbcon.restore_img("doogee.ab")
 
     if not error : 
         logger.info('Config of %s device', device['name'])

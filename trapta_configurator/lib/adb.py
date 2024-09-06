@@ -44,7 +44,7 @@ class Adb(object):
     myPopen = subprocess.Popen(" ".join(cmd), stdin = subprocess.PIPE, stdout = subprocess.PIPE, shell=True)
     stdout, stderr = myPopen.communicate()
     if myPopen.returncode != 0:
-      LOGGER.error("calling : %s : %s", cmd, stderr)
+      LOGGER.error("calling : %s : %s : %s", cmd, stdout, stderr)
     return myPopen.returncode, stdout, stderr
    
   def start_server(self):
